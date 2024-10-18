@@ -15,7 +15,7 @@ const useHandleTyping = (
 			}
 			if (e.key === "Backspace") {
 				setCurr((prev) => prev.slice(0, -1));
-			} else if (curr.length !== 5 && e.key.match(`^[a-zA-z]$`)) {
+			} else if (curr.length !== 5 && e.key.match(`^[a-zA-Z]+$`)) {
 				setCurr((prev) => prev + e.key.toUpperCase());
 			}
 		};
