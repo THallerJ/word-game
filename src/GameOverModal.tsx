@@ -17,7 +17,7 @@ const GameOverModal = ({ guess, word, guessCount }: VictoryModalProps) => {
 			/>
 			<div className={`modal ${gameOver ? "modal_slide_up" : null}`}>
 				<div className="modal_body">{`${
-					guessCount === GAME_SIZE ? "You Lose!" : "You win!"
+					guess === word ? "You win!" : "You lose!"
 				} The word was ${word}.`}</div>
 			</div>
 		</>

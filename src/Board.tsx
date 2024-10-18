@@ -11,22 +11,28 @@ type BoardProps = {
 
 const Board = ({ curr, guess, word, guessCount }: BoardProps) => {
 	const prevGuesses = usePrevGuesses(guess, guessCount);
-	const wordSet = useWordSet(word);
+	const wordMap = useWordSet(word);
 
 	const renderBoard = () => {
 		const cols: React.ReactNode[] = [];
 
 		for (let r = 0; r < GAME_SIZE + 1; r++) {
 			const row: React.ReactNode[] = [];
+			const tempMap = { ...wordMap };
+
+			if (r > 0)
+				for (let c = 0; c < GAME_SIZE; c++)
+					findMatches(r, c, word, tempMap, prevGuesses);
 
 			for (let c = 0; c < GAME_SIZE; c++) {
 				const elem = (
 					<div
 						key={`{r-${r}c-${c}}`}
-						className={`box ${getBoxStyle(r, c, word, wordSet, prevGuesses)}`}>
+						className={`box ${getBoxStyle(r, c, word, tempMap, prevGuesses)}`}>
 						{getBoxText(r, c, curr, prevGuesses)}
 					</div>
 				);
+
 				row.push(elem);
 			}
 
@@ -56,18 +62,37 @@ const getBoxText = (
 	else return "";
 };
 
+const findMatches = (
+	r: number,
+	c: number,
+	word: string,
+	wordMap: Record<string, number>,
+	prevGuesses: string[]
+) => {
+	const prevGuess = prevGuesses[r - 1];
+
+	if (prevGuess && prevGuess[c] === word[c])
+		wordMap[prevGuess[c]] = wordMap[prevGuess[c]] -= 1;
+};
+
 const getBoxStyle = (
 	r: number,
 	c: number,
 	word: string,
-	wordSet: Set<string>,
+	wordMap: Record<string, number>,
 	prevGuesses: string[]
 ) => {
-	if (r === 0) return "top_box";
-	else if (r > prevGuesses.length) return "";
-	else if (prevGuesses[r - 1] && prevGuesses[r - 1][c] === word[c])
+	const prevGuess = prevGuesses[r - 1];
+
+	if (r === 0) {
+		return "top_box";
+	} else if (r > prevGuesses.length) {
+		return "";
+	} else if (prevGuess && prevGuess[c] === word[c]) {
 		return "correct_letter";
-	else if (prevGuesses[r - 1] && wordSet.has(prevGuesses[r - 1][c]))
+	} else if (prevGuess && wordMap[prevGuess[c]] > 0) {
 		return "wrong_location_letter";
-	else if (prevGuesses[r - 1]) return "wrong_letter";
+	} else if (prevGuess) {
+		return "wrong_letter";
+	}
 };

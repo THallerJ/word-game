@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 
-const useWordSet = (word: string) => {
-	const [wordSet, setWordSet] = useState<Set<string>>(new Set());
+const useWordMap = (word: string) => {
+	const [wordMap, setWordMap] = useState<Record<string, number>>({});
 
 	useEffect(() => {
-		const set = new Set<string>();
+		const tempMap: Record<string, number> = {};
 		for (const letter of word) {
-			set.add(letter);
+			tempMap[letter] = (tempMap[letter] ?? 0) + 1;
 		}
-		setWordSet(set);
-	}, [word, setWordSet]);
+		setWordMap(tempMap);
+	}, [word, setWordMap]);
 
-	return wordSet;
+	return wordMap;
 };
 
-export default useWordSet;
+export default useWordMap;
