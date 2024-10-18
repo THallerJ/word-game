@@ -4,7 +4,7 @@ body {
 	height: 100vh;
 	margin: 0;
 	padding: 0;
-	background-color: hsl(0, 0%, 83%);
+	background-color: hsl(240, 3%, 20%);
 }
 
 .app {
@@ -19,12 +19,17 @@ body {
 	width: 100%;
 }
 
+.title {
+	color: hsl(0, 0%, 75%);
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
 .game {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-	background-color: hsl(45, 29%, 97%);
+	background-color: hsl(240, 3%, 11%);
 	width: 50%;
 	padding-top: 4rem;
 }
@@ -52,7 +57,7 @@ body {
 
 .top_box {
 	background-color: hsl(0, 0%, 20%);
-	color: hsl(0, 0%, 60%);
+	color: hsl(0, 0%, 75%);
 	border-color: black;
 }
 
