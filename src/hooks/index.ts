@@ -1,5 +1,5 @@
 import useHandleTyping from './useHandleTyping';
-import useWordSet from './useWordSet';
+import useWordMap from './useWordMap';
 import usePrevGuesses from './usePrevGuesses';
 
-export { useHandleTyping, useWordSet, usePrevGuesses };
+export { useHandleTyping, useWordMap, usePrevGuesses };

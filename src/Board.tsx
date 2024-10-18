@@ -1,6 +1,6 @@
 import './styles.css';
 import { GAME_SIZE } from './common';
-import { usePrevGuesses, useWordSet } from './hooks';
+import { usePrevGuesses, useWordMap } from './hooks';
 
 type BoardProps = {
   curr: string;
@@ -11,7 +11,7 @@ type BoardProps = {
 
 const Board = ({ curr, guess, word, guessCount }: BoardProps) => {
   const prevGuesses = usePrevGuesses(guess, guessCount);
-  const wordMap = useWordSet(word);
+  const wordMap = useWordMap(word);
 
   const renderBoard = () => {
     const cols: React.ReactNode[] = [];
