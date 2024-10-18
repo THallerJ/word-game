@@ -17,7 +17,12 @@ function App() {
 			<div className="body">
 				<div className="game">
 					<h1 className="title">Word Game</h1>
-					<Board curr={curr} guess={currGuess} word={word} />
+					<Board
+						curr={curr}
+						guess={currGuess}
+						word={word}
+						guessCount={guessCount}
+					/>
 					<GameOverModal
 						guess={currGuess}
 						word={word}

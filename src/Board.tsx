@@ -6,10 +6,11 @@ type BoardProps = {
 	curr: string;
 	guess: string;
 	word: string;
+	guessCount: number;
 };
 
-const Board = ({ curr, guess, word }: BoardProps) => {
-	const prevGuesses = usePrevGuesses(guess);
+const Board = ({ curr, guess, word, guessCount }: BoardProps) => {
+	const prevGuesses = usePrevGuesses(guess, guessCount);
 	const wordSet = useWordSet(word);
 
 	const renderBoard = () => {
