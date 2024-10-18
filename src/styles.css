@@ -1,141 +1,141 @@
 html,
 body {
-	min-width: 100vw;
-	height: 100vh;
-	margin: 0;
-	padding: 0;
-	background-color: hsl(240, 3%, 20%);
+  min-width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(240, 3%, 20%);
 }
 
 .app {
-	height: 100vh;
-	width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 .body {
-	display: flex;
-	justify-content: center;
-	height: 100%;
-	width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .title {
-	color: hsl(0, 0%, 75%);
-	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: hsl(0, 0%, 75%);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .btn {
-	background-color: hsl(231, 44%, 74%);
-	width: 8rem;
-	padding: 0.5rem;
-	font-size: 1.125rem;
-	font-weight: 600;
-	margin-top: 2rem;
-	border-radius: 8px;
-	border-style: none;
-	outline: none;
-	cursor: pointer;
+  background-color: hsl(231, 44%, 74%);
+  width: 8rem;
+  padding: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  border-radius: 8px;
+  border-style: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .btn:hover {
-	background-color: hsl(231, 44%, 72%);
+  background-color: hsl(231, 44%, 72%);
 }
 
 .game {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-	background-color: hsl(240, 3%, 11%);
-	width: 50%;
-	padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: hsl(240, 3%, 11%);
+  width: 50%;
+  padding-top: 4rem;
 }
 
 .board {
-	display: flex;
-	flex-direction: column;
-	border-style: solid;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
 }
 
 .row {
-	display: flex;
+  display: flex;
 }
 
 .box {
-	width: 5rem;
-	height: 5rem;
-	border-style: solid;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 3rem;
-	background-color: hsl(0, 0%, 90%);
+  width: 5rem;
+  height: 5rem;
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  background-color: hsl(0, 0%, 90%);
 }
 
 .top_box {
-	background-color: hsl(0, 0%, 5%);
-	color: hsl(0, 0%, 75%);
-	border-color: black;
+  background-color: hsl(0, 0%, 5%);
+  color: hsl(0, 0%, 75%);
+  border-color: black;
 }
 
 .correct_letter {
-	background-color: #81c784;
+  background-color: #81c784;
 }
 
 .wrong_location_letter {
-	background-color: #ffb74d;
+  background-color: #ffb74d;
 }
 
 .wrong_letter {
-	background-color: #e57373;
+  background-color: #e57373;
 }
 
 .modal {
-	position: fixed;
-	top: 100%;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	transition: top 500ms ease-in;
-	font-weight: 600;
-	font-size: 2rem;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: top 500ms ease-in;
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 .modal_slide_up {
-	top: 0;
+  top: 0;
 }
 
 .modal_body {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: hsl(240, 3%, 20%);
-	padding: 4rem;
-	border-radius: 16px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	color: hsl(0, 0%, 75%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(240, 3%, 20%);
+  padding: 4rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: hsl(0, 0%, 75%);
 }
 
 .modal_background {
-	background-color: black;
-	opacity: 0%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	transition: opacity 500ms ease-in;
-	visibility: hidden;
+  background-color: black;
+  opacity: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 500ms ease-in;
+  visibility: hidden;
 }
 
 .modal_background_visible {
-	opacity: 75%;
-	visibility: visible;
+  opacity: 75%;
+  visibility: visible;
 }
 
 .modal_word {
-	background-color: #81c784;
+  background-color: #81c784;
 }
