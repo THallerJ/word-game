@@ -13,6 +13,8 @@ const usePrevGuesses = (guess: string, guessCount: number) => {
 					return prev;
 				}
 			});
+		} else {
+			setPrevGuesses([]);
 		}
 	}, [guess, guessCount]);
 

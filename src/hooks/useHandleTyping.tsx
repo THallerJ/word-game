@@ -8,6 +8,7 @@ const useHandleTyping = (
 ) => {
 	useEffect(() => {
 		const handleTyping = (e: KeyboardEvent) => {
+			e.preventDefault();
 			if (e.key === "Enter" && curr.length === 5) {
 				setCurrGuess(curr);
 				setCurr("");
@@ -15,7 +16,7 @@ const useHandleTyping = (
 			}
 			if (e.key === "Backspace") {
 				setCurr((prev) => prev.slice(0, -1));
-			} else if (curr.length !== 5 && e.key.match(`^[a-zA-Z]+$`)) {
+			} else if (curr.length !== 5 && e.key.match(`^[a-zA-Z]$`)) {
 				setCurr((prev) => prev + e.key.toUpperCase());
 			}
 		};
@@ -26,7 +27,6 @@ const useHandleTyping = (
 			window.removeEventListener("keydown", handleTyping);
 		};
 	}, [curr, setCurr, setCurrGuess, setGuessCount]);
-	return <div>useHandleTyping</div>;
 };
 
 export default useHandleTyping;

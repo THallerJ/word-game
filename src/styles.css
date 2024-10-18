@@ -24,6 +24,23 @@ body {
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.btn {
+	background-color: hsl(231, 44%, 74%);
+	width: 8rem;
+	padding: 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin-top: 2rem;
+	border-radius: 8px;
+	border-style: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: hsl(231, 44%, 72%);
+}
+
 .game {
 	display: flex;
 	flex-direction: column;
@@ -93,9 +110,13 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: #faf9f6;
+	background-color: hsl(240, 3%, 20%);
 	padding: 4rem;
 	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: hsl(0, 0%, 75%);
 }
 
 .modal_background {
@@ -107,10 +128,12 @@ body {
 	height: 100%;
 	width: 100%;
 	transition: opacity 500ms ease-in;
+	visibility: hidden;
 }
 
 .modal_background_visible {
 	opacity: 75%;
+	visibility: visible;
 }
 
 .modal_word {

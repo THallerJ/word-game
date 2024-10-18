@@ -5,12 +5,19 @@ import Board from "./Board";
 import GameOverModal from "./GameOverModal";
 import { useHandleTyping } from "./hooks";
 
-function App() {
-	const [word] = useState(getWord());
+const App = () => {
+	const [word, setWord] = useState(getWord());
 	const [curr, setCurr] = useState("");
 	const [currGuess, setCurrGuess] = useState("");
 	const [guessCount, setGuessCount] = useState(0);
 	useHandleTyping(curr, setCurr, setCurrGuess, setGuessCount);
+
+	const resetGame = () => {
+		setCurr("");
+		setCurrGuess("");
+		setGuessCount(0);
+		setWord(getWord());
+	};
 
 	return (
 		<div className="app">
@@ -23,16 +30,20 @@ function App() {
 						word={word}
 						guessCount={guessCount}
 					/>
+					<button type="button" className="btn" onClick={resetGame}>
+						Reset Game
+					</button>
 					<GameOverModal
 						guess={currGuess}
 						word={word}
 						guessCount={guessCount}
+						onReset={resetGame}
 					/>
 				</div>
 			</div>
 		</div>
 	);
-}
+};
 
 export default App;
 

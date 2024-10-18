@@ -4,8 +4,14 @@ type VictoryModalProps = {
 	guess: string;
 	word: string;
 	guessCount: number;
+	onReset: () => void;
 };
-const GameOverModal = ({ guess, word, guessCount }: VictoryModalProps) => {
+const GameOverModal = ({
+	guess,
+	word,
+	guessCount,
+	onReset,
+}: VictoryModalProps) => {
 	const gameOver = guessCount === GAME_SIZE || guess === word;
 
 	return (
@@ -16,9 +22,16 @@ const GameOverModal = ({ guess, word, guessCount }: VictoryModalProps) => {
 				}`}
 			/>
 			<div className={`modal ${gameOver ? "modal_slide_up" : null}`}>
-				<div className="modal_body">{`${
-					guess === word ? "You win!" : "You lose!"
-				} The word was ${word}.`}</div>
+				<div className="modal_body">
+					<span>
+						{`${
+							guess === word ? "You win!" : "You lose!"
+						} The word was ${word}.`}
+					</span>
+					<button className="btn" onClick={onReset}>
+						Play again
+					</button>
+				</div>
 			</div>
 		</>
 	);
